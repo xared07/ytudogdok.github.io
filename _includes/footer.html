@@ -1,0 +1,50 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="footer-top">
+          <h2 class="logo-title">
+            <a href="https://yildiz.edu.tr" class="logo-text"> YTU</a> <a>|</a> <a href="{{site.baseurl}}/" class="logo-text"> DOGDOK</a>
+          </h2>
+          <div class="top"><i class="ion ion-ios-arrow-up"></i></div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>&copy; {{site.time | date: '%Y'}} Designed by <a href="https://instagram.com/acanboyaci"> Can Boyacı</a><a> &</a> </a> </a><a href="instagram.com/turcicumemir"> Emir Can Genç</a></p>
+          </div>
+          <div class="footer-social">
+            <ul class="list-reset">
+              {% if site.facebook %}
+              <li><a href="{{ site.facebook }}">Facebook</a></li>
+              {% else %} {% endif %}
+
+              {% if site.twitter %}
+              <li><a href="{{ site.twitter }}">Twitter</a></li>
+              {% else %} {% endif %}
+
+              {% if site.instagram %}
+              <li><a href="{{ site.instagram }}">Instagram</a></li>
+              {% else %} {% endif %}
+
+              {% if site.twitch %}
+              <li><a href="{{ site.twitch }}">Twitch</a></li>
+              {% else %} {% endif %}
+
+              {% if site.discord %}
+              <li><a href="{{ site.discord }}">Discord</a></li>
+              {% else %} {% endif %}
+
+              {% if site.steam %}
+              <li><a href="{{ site.steam }}">Steam</a></li>
+              {% else %} {% endif %}
+
+              {% if site.linkedin %}
+              <li><a href="{{ site.linkedin }}">Linked.in</a></li>
+              {% else %} {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> <!-- /.footer -->

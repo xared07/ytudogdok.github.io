@@ -1,0 +1,82 @@
+#-------------------------------
+# General Site Settings
+
+title: YTU | DOGDOK
+description: Yıldız Teknik Üniversitesi Dijital Oyun Geliştirme ve Dijital Oyunculuk Kulübü websitesine hoşgeldiniz. # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://ytudogdok.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+#-------------------------------
+# About Section
+author-name:   Can Boyacı
+author-avatar: author.jpg
+
+
+#-------------------------------
+# Contact links
+facebook:  https://www.facebook.com/dogdokytu # facebook
+twitter:   https://twitter.com/ytudogdok # twitter
+instagram: https://www.instagram.com/ytu_dogdok # instagram
+twitch:    https://www.twitch.tv/ytudogdok #twitch
+discord:   https://discord.gg/PEgAzDE # discord
+steam:     https://steamcommunity.com/groups/ytudogdok #steam
+linkedin:  https://www.linkedin.com/company/ytu-dogdok/ #linkedin
+
+
+
+#-------------------------------
+# Comment Section (Disqus)
+# Add your shortname for Disqus Comment. For example mr-brown
+
+
+#-------------------------------
+# Instagram Feed
+instafeed: true # To enable the instafeed, use the value true. To turn off use the value false.
+
+
+#-------------------------------
+# Discord Widget
+discord: true
+
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: UA-177348877-1 # Add your identifier. For example UA-99631805-1.
+
+
+#-------------------------------
+# Newsletter
+mailchimp: dogdok.us17.list-manage.com/subscribe/post?u=20d289b3990b40e771c01db92&amp; id=9dd9e0d711 # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+
+
+#-------------------------------
+# Build settings
+markdown: kramdown
+permalink: ':title/'
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+paginate: 7
+paginate_path: "/page/:num"
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+#-------------------------------
+# Exclude from processing.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

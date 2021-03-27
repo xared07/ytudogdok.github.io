@@ -1,0 +1,115 @@
+<aside class="sidebar">
+  
+  {% if page.id %}
+  <div class="widget widget-recent">
+    <h3 class="widget-title">Son Güncellemeler</h3>
+    {% for post in site.posts limit:4 %}
+    <div class="recent-posts">
+      {% if post.image %}
+      <div class="recent-header">
+        <a class="recent-image" href="{{ root_url }}{{ post.url | prepend: site.baseurl }}" style="background-image: url({post.image}})"></a>
+      </div>
+      {% else %}
+      {% endif %}
+      <div class="recent-content">
+        <h6 class="recent-title"><a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h6>
+        <div class="recent-date">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  {% endif %}
+
+  <div class="widget widget-social">
+    <h3 class="widget-title">Sosyal Medyada DOGDOK</h3>
+    <ul class="social-profiles list-reset">
+      {% if site.facebook %}
+      <li class="social-profiles-item">
+        <a href="{{ site.facebook }}"target="_blank" class="social-profiles-link"><i class="ion ion-logo-facebook"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+       {% if site.twitter %}
+      <li class="social-profiles-item">
+        <a href="{{ site.twitter }}"target="_blank" class="social-profiles-link"><i class="ion ion-logo-twitter"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.instagram %}
+      <li class="social-profiles-item">
+        <a href="{{ site.instagram }}"target="_blank" class="social-profiles-link"><i class="ion ion-logo-instagram"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.twitch %}
+      <li class="social-profiles-item">
+        <a href="{{ site.twitch }}"target="_blank" class="social-profiles-link"><i class="ion ion-logo-twitch"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.steam %}
+      <li class="social-profiles-item">
+        <a href="{{ site.steam }}"target="_blank" class="social-profiles-link"><i class="ion ion-logo-steam"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+    
+    </ul>
+  </div>
+
+  <div class="widget widget-newsletter">
+    <h3 class="logo-text">Bülten</h3>
+    <div class="newsletter-subtitle">Yeniliklerden Haberdar Olun.</div>
+    <form class="c-newsletter-form validate" action="{% if site.mailchimp %}//{{site.mailchimp}}{% else %}#{% endif %}" method="POST"
+      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <div class="newsletter-group">
+        <div class="newsletter-group-top">
+          <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+          <i class="email-icon ion ion-ios-mail"></i>
+          <input class="newsletter-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="E-mail">
+        </div>
+        <input class="newsletter-button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Abone Ol">
+      </div>
+    </form>
+  </div>
+
+  {% if site.instafeed == true %}
+ 
+  <div class="widget widget-instagram" >
+    <h3 class="widget-title">Instagram</h3>
+   <!-- The target container for the images -->
+<div id="instafeed"></div>
+
+<!-- The Token Agent service - make sure to use your own URL here -->
+<script src='https://dogdokinsta.herokuapp.com/token.js'></script>
+
+
+<!-- The Instafeed.js library -->
+<script src="{{ site.baseurl }}/js/instafeeed.js"></script>
+
+<!-- Configure and run instafeed -->
+<script>
+  console.log(Instafeed)
+  var feed = new Instafeed({
+    accessToken: InstagramToken,
+    transform: function(item) {
+      var d = new Date(item.timestamp);
+      item.date = [d.getDate(), d.getMonth(), d.getYear()].join('/');
+      return item;
+    }
+  });
+  
+  feed.run();
+</script>
+<h3 class="widget-title"></h3>
+<p style="text-align:center;"></p>
+<p style="text-align:center;"><a class="instagram-prof" href="https://instagram.com/ytu_dogdok"target="_blank">&#64;ytu_dogdok</a></p>
+  {% endif %}
+  </div>
+  {% if site.discord == true %}
+  <iframe src="https://discordapp.com/widget?id=262668900691345411&theme=dark" width="370" height="420" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  {% endif %}
+</aside> <!-- /.sidebar -->
